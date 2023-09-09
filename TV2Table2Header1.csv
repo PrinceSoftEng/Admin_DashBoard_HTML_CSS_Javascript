@@ -1,0 +1,8 @@
+DataField, ItemStyleWidth, HeaderText, ItemStyleCssClass
+Id,20px,ID,
+Master_Scode,20px,Master Code
+Customer_Name,260px,CUSTOMER NAME,
+Due_Date,80px,DUE DATE,right-aligned
+Invoice_Amount,20px,INVOICE AMOUNT,right-aligned
+Out_Amount,20px,OUT AMOUNT,right-aligned
+Delayed_Days,10px,DELAYED DAYS,right-aligned

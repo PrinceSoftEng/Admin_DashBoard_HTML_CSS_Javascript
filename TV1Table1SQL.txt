@@ -1,0 +1,15 @@
+SELECT TOP 50 
+	Id,
+	comp_code as Company_Code,
+	master_scode as Master_Scode,
+	inv_smcode as Inv_SMCode,
+	cust_code as Customer_Code,
+	cust_name as Customer_Name,
+	inv_no as Invoice_No,
+	inv_code as Invoice_Code,
+	CONVERT(VARCHAR,inv_date,103) as Invoice_Date,
+	CONVERT(VARCHAR,duedate,103) as Due_Date,
+	inv_amt as Invoice_Amount,
+	outamt as Out_Amount,
+	delayed_days as Delayed_Days
+FROM outstanding_salescode_11j

@@ -1,0 +1,6 @@
+SELECT TOP 100 
+	ID,
+	master_scode as Master_Scode,
+	cust_name as Customer_Name,
+	delayed_days as Delayed_Days
+FROM outstanding_salescode_11j

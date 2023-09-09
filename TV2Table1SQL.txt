@@ -1,0 +1,10 @@
+
+SELECT TOP 60 
+	ID,
+	master_scode as Master_Scode,
+	cust_name as Customer_Name,
+	CONVERT(VARCHAR,duedate,103) as Due_Date,
+	inv_amt as Invoice_Amount,
+	outamt as Out_Amount,
+	delayed_days as Delayed_Days 
+FROM outstanding_salescode_11j

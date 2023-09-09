@@ -1,0 +1,5 @@
+DataField, ItemStyleWidth, HeaderText, ItemStyleCssClass
+Id,20px,ID,
+Master_Scode,20px,MASTER SCODE,
+Customer_Name,240px,CUSTOMER NAME,
+Delayed_Days,10px,DELAYED DAYS,right-aligned

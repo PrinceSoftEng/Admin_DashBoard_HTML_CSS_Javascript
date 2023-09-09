@@ -1,0 +1,275 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(80deg,#edd3da,#1b203a);
+    font-family: system-ui;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.logo {
+    margin: 0px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+/*Sidebar Navigation Menu*/
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #818181;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+}
+
+    .sidenav a {
+        padding: 10px 4px 10px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        position: relative;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 20px 0;
+        z-index: 1;
+    }
+
+        .sidenav a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid #442beb;
+            border-bottom: 2px solid #442beb;
+            transform: scaleY(2);
+            opacity: 0;
+            transition: 0.9s;
+        }
+
+        .sidenav a:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #442beb;
+            transform: scale(0);
+            opacity: 0;
+            transition: 0.9s;
+            z-index: -1;
+        }
+
+        .sidenav a:hover {
+            /*color: #f1f1f1;*/
+            background-color: #442beb;
+        }
+
+            .sidenav a:hover:before {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+            .sidenav a:hover:after {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+#main {
+    padding: 5px;
+    margin-left: 200px;
+    background:#cac618;
+}
+
+.head {
+    padding: 5px;
+}
+
+.col-div-6 {
+    width: 50%;
+    float: left;
+}
+
+.profile {
+    display: inline-block;
+    float: right;
+    width: 160px;
+}
+
+.pro-img {
+    float: left;
+    width: 40px;
+    margin-top: 5px;
+}
+
+.profile p {
+    color: white;
+    font-weight: 500;
+    margin-left: 55px;
+    margin-top: 10px;
+    font-size: 13.5px;
+}
+
+    .profile p span {
+        font-weight: 400;
+        font-size: 12px;
+        display: block;
+        color: #8e8b8b;
+    }
+
+.nav2 {
+    display: none;
+}
+/* This Css is for design the all Box */
+.col-div-3 {
+    width: 25%;
+    float: left;
+}
+
+.box {
+    width: 85%;
+    height: 100px;
+    background-color: #ff0000;
+    margin-left: 10px;
+    padding: 5px;
+    transition: all .3s ease-in-out;
+}
+
+    .box p {
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        line-height: 30px;
+        padding-left: 10px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .box:hover {
+        transform: scale(1.1);
+    }
+
+    .box p span {
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+    }
+
+.box-icon {
+    font-size: 40px !important;
+    float: right;
+    margin-top: 35px !important;
+    color: #818181;
+    padding-right: 10px;
+}
+
+.box1 {
+    width: 85%;
+    height: 100px;
+    background-color: #eee319;
+    margin-left: 10px;
+    padding: 5px;
+    transition: all .3s ease-in-out;
+}
+
+    .box1 p {
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        line-height: 30px;
+        padding-left: 10px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .box1:hover {
+        transform: scale(1.1);
+    }
+
+
+    .box1 p span {
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+    }
+
+.box2 {
+    width: 85%;
+    height: 100px;
+    background-color: #3bd01e;
+    margin-left: 10px;
+    padding: 5px;
+    transition: all .3s ease-in-out;
+}
+
+    .box2 p {
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        line-height: 30px;
+        padding-left: 10px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .box2:hover {
+        transform: scale(1.1);
+    }
+
+    .box2 p span {
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+    }
+
+.box3 {
+    width: 85%;
+    height: 100px;
+    background-color: #2dd5b6;
+    margin-left: 10px;
+    padding: 5px;
+    transition: all .3s ease-in-out;
+}
+
+    .box3 p {
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        line-height: 30px;
+        padding-left: 10px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .box3:hover {
+        transform: scale(1.1);
+    }
+
+    .box3 p span {
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+    }
+
+
+.col-div-8 {
+    width: 100%;
+    float:left;
+}
+
+
+/*.content-box {
+        padding: 20px;
+
+}*/
+
