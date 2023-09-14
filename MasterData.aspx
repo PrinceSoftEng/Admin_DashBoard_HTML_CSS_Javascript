@@ -6,27 +6,23 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        h3 {
-            width: 100%;
-            padding: 10px;
-            background-color: #e5533e;
-            position: sticky;
-        }
-        /*Table Css*/
+
+        /*Assing CSS stop thead table color-profile GridView*/
         table {
             border-collapse: collapse;
+            width:100%;
         }
-
             table th {
                 color: white;
                 background-color: orangered;
+                padding:5px;
                 z-index: 1;
-                top: 0;
+                top: 37px;
                 position: sticky;
             }
 
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid black;           
             padding: 5px
         }
 
@@ -37,6 +33,7 @@
         tr:hover {
             background-color: #67a6f5;
         }
+
         /*Scrolable CSS*/
         .gridview-container {
             width: 100%;
@@ -51,6 +48,7 @@
             text-align: right;
         }
 
+        /*CSS form Blink color-profile Particular row */
         @keyframes blinking {
             0%, 100% {
                 background-color: red;
@@ -66,38 +64,22 @@
         .blink {
             animation: blinking 3.5s infinite;
         }
+
         /*Auto typing Lable of Gridview*/
-        .typewriter h3 {
+        .typewriter {
+            justify-content: center;
             color: whitesmoke;
-            overflow: hidden;
-            border-right: .15em solid orange;
-            white-space: nowrap;
-            margin: 0 auto;
+            text-align: center;
+            position:sticky;
+            top: 0;
             letter-spacing: .15em;
-            animation: typing 2.5s steps(30, end), blink-caret 0.1s step-end infinite;
-        }
-
-        /* The typing effect */
-        @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 100%
-            }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from, to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: orange;
-            }
-        }
+            z-index:1;
+            white-space: nowrap;
+            background-color: #e5533e;
+            padding: 12px;
+            display: flex;
+            overflow: hidden;
+        }      
     </style>
 </head>
 <body>
@@ -122,15 +104,14 @@
                 setTimeout(scrollGridView, 0);
             });
         </script>
-        <div class="typewriter">
-            <h3 align="center">OUTSTANDING SALES REPORT</h3>
-        </div>
+       
 
         <div id="gridView">
             <div class="gridview-container">
                 <asp:PlaceHolder ID="GridViewPlaceholder" runat="server"></asp:PlaceHolder>
             </div>
         </div>
+
         <%--this is script for go to next Page of Bar Chart--%>
         <script>
             const gridViewItemTimeout = <%= ConfigurationManager.AppSettings["gridViewItemTimeout"] %>;

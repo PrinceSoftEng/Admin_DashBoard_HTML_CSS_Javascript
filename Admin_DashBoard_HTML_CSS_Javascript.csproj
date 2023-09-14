@@ -76,9 +76,14 @@
     <Content Include="MasterData.aspx" />
     <Content Include="TotalCustomerData_Page.aspx" />
     <Content Include="TotalMasterData_Page.aspx" />
+    <Content Include="TV1Label1.txt" />
+    <Content Include="TV1Label2.txt" />
+    <Content Include="TV1Label3.txt" />
     <Content Include="TV1Table1SQL.txt" />
     <Content Include="TV1Table2SQL.txt" />
     <Content Include="TV1Table3SQL.txt" />
+    <Content Include="TV2Label1.txt" />
+    <Content Include="TV2Label2.txt" />
     <Content Include="TV2Table1SQL.txt" />
     <Content Include="TV2Table2SQL.txt" />
     <Content Include="Web.config" />

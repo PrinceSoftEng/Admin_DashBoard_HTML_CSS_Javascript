@@ -75,39 +75,43 @@ namespace Admin_DashBoard_HTML_CSS_Javascript
             }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                try
+                Label setLabel = new Label();
+                setLabel.Text = SetLabelFromTextFile(dt.Rows[i][4] + ".txt");
+                setLabel.CssClass = "typewriter";
+
+                List<CSVColumnInfo> csvData = ReadCSVFile(dt.Rows[i][3] + ".csv");
+                GridView gvGrid = new GridView();
+                gvGrid.ID = "DynamicGridView" + i;
+                gvGrid.AutoGenerateColumns = false;
+                gvGrid.RowDataBound += GridView_OnRowDataBound;
+                gvGrid.Width = Unit.Parse("100%");
+                foreach (CSVColumnInfo columnInfo in csvData)
                 {
-                    //var filterRows =
-                    List<CSVColumnInfo> csvData = ReadCSVFile(dt.Rows[i][3] + ".csv");
-                    GridView gvGrid = new GridView();
-                    gvGrid.ID = "DynamicGridView";
-                    gvGrid.AutoGenerateColumns = false;
-                    gvGrid.Width = Unit.Parse("100%");
-                    gvGrid.RowDataBound += GridView_OnRowDataBound;
-                    foreach (CSVColumnInfo columnInfo in csvData)
+                    BoundField column = new BoundField();
+                    column.DataField = columnInfo.DataField;
+                    column.ItemStyle.Width = Unit.Parse(columnInfo.ItemStyleWidth);
+                    column.HeaderText = columnInfo.HeaderText;
+                    column.ItemStyle.CssClass = columnInfo.ItemStyleCssClass;
+                    if (!string.IsNullOrEmpty(columnInfo.ItemStyleCssClass))
                     {
-                        BoundField column = new BoundField();
-                        column.DataField = columnInfo.DataField;
-                        column.ItemStyle.Width = Unit.Parse(columnInfo.ItemStyleWidth);
-                        column.HeaderText = columnInfo.HeaderText;
-                        column.ItemStyle.CssClass = columnInfo.ItemStyleCssClass;
-                        if (!string.IsNullOrEmpty(columnInfo.ItemStyleCssClass))
-                        {
-                            column.ItemStyle.HorizontalAlign = HorizontalAlign.Right;
-                        }
-                        gvGrid.Columns.Add(column);
+                        column.ItemStyle.HorizontalAlign = HorizontalAlign.Right;
                     }
-                    GridViewPlaceholder.Controls.Add(gvGrid);
-
-                    ////Bind data to GridView
-                    gvGrid.DataSource = GetDataFromTable1(dt.Rows[i][2] + ".txt");
-                    gvGrid.DataBind();
+                    gvGrid.Columns.Add(column);
                 }
-                catch (Exception ex)
-                {
+                ////Bind data to GridView
+                gvGrid.DataSource = GetDataFromTable1(dt.Rows[i][2] + ".txt");
+                gvGrid.DataBind();
 
-                }
+                GridViewPlaceholder.Controls.Add(setLabel);
+                GridViewPlaceholder.Controls.Add(gvGrid);
             }
+        }
+
+        private string SetLabelFromTextFile(string textFileName)
+        {
+            string tFilePath = Server.MapPath(textFileName);
+            string fileText = File.ReadAllText(tFilePath);
+            return fileText;
         }
 
         //Get Data From DataBase import from text file
@@ -174,8 +178,28 @@ namespace Admin_DashBoard_HTML_CSS_Javascript
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 DataRowView rowView = (DataRowView)e.Row.DataItem;
-                int colName = Convert.ToInt16(rowView["Delayed_Days"]);
-                if (gvGrid.ID == "DynamicGridView" && colName > 15)
+                int dLayDays = Convert.ToInt16(rowView["Delayed_Days"]);
+                if (gvGrid.ID == "DynamicGridView0" && dLayDays > 15)
+                {
+                    e.Row.BackColor = System.Drawing.Color.Yellow;
+                    e.Row.CssClass += "blink";
+                }
+                else if (gvGrid.ID == "DynamicGridView1" && dLayDays > 15)
+                {
+                    e.Row.BackColor = System.Drawing.Color.Yellow;
+                    e.Row.CssClass += "blink";
+                }
+                else if (gvGrid.ID == "DynamicGridView2" && dLayDays > 15)
+                {
+                    e.Row.BackColor = System.Drawing.Color.Yellow;
+                    e.Row.CssClass += "blink";
+                }
+                else if (gvGrid.ID == "DynamicGridView3" && dLayDays > 15)
+                {
+                    e.Row.BackColor = System.Drawing.Color.Yellow;
+                    e.Row.CssClass += "blink";
+                }
+                else if (gvGrid.ID == "DynamicGridView4" && dLayDays > 15)
                 {
                     e.Row.BackColor = System.Drawing.Color.Yellow;
                     e.Row.CssClass += "blink";
